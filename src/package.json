@@ -10,8 +10,10 @@
     },
     "devDependencies": {
         "@nuxt/devtools": "latest",
-        "@types/node": "^18",
         "nuxt": "^3.6.0",
         "typescript": "latest"
+    },
+    "dependencies": {
+        "firebase-tools": "^12.4.0"
     }
 }
