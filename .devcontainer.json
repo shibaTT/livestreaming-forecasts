@@ -1,0 +1,7 @@
+{
+    "name": "livestreaming-forecasts",
+    "dockerComposeFile": "./docker-compose.yml",
+    "service": "nuxtjs",
+    "workspaceFolder": "/workspace",
+    "shutdownAction": "stopCompose"
+}
