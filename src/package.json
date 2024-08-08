@@ -10,7 +10,7 @@
     },
     "devDependencies": {
         "@nuxt/devtools": "latest",
-        "nuxt": "^3.6.0",
+        "nuxt": "^3.12.4",
         "typescript": "latest"
     },
     "dependencies": {
