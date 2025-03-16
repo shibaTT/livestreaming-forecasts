@@ -1,14 +1,17 @@
+import { WeatherData } from "@/types/types";
+
 export default defineEventHandler(async (event) => {
     const baseUrl: string = "http://api.weatherapi.com/v1/forecast.json?";
+    const API_KEY: string = useRuntimeConfig().API_KEY;
     const location: Array<string> = ["Sapporo", "Tokyo", "Nagoya", "Osaka", "Fukuoka"];
     const params: Record<string, string> = {
-        key: useRuntimeConfig().API_KEY,
+        key: API_KEY,
         days: "2",
         aqi: "no",
         alerts: "no",
     };
     const query = new URLSearchParams(params);
-    const response: any = [];
+    const response: WeatherData = [];
 
     await Promise.all(
         location.map(async (target) => {
@@ -25,7 +28,7 @@ export default defineEventHandler(async (event) => {
             return;
         });
 
-    // const res = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${useRuntimeConfig().API_KEY}&q=Tokyo`);
+    // const res = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=Tokyo`);
     // const pos = await res.json();
 
     return response;

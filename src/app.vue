@@ -1,12 +1,13 @@
 <script lang="ts" setup>
-function getWeather(): Array<Record<string, string>> {
+import { WeatherData } from "@/types/types";
+function getWeather(): WeatherData {
     const { data }: any = useAsyncData(() => $fetch("/api/getWeatherData"));
     return data.value;
 }
 
-const weather = getWeather();
+const weathers = getWeather();
 </script>
 
 <template>
-    <WeatherItem :weather="weather" />
+    <WeatherItem :weathers="weathers" />
 </template>
